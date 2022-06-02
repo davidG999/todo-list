@@ -19,19 +19,31 @@ const Row = ({
 }: TodoProps) => {
 
   return (
-    <div>
-      <div>
+    <div className={`flex w-full p-4 mb-2 m-2 justify-between
+      ${isCompleted ? 'bg-gray-600' : 'bg-green-600'}`}
+    >
+      <div className='flex'>
         <input
+          className='h-7 w-7 mr-2 shrink-0'
           type="checkbox"
           checked={isCompleted}
           onChange={() => handleCheckTodo(id)}
         />
-        <p>{task}</p>
+        <p
+          className={`
+          ml-2 text-xl font-sans font-medium break-all
+          ${isCompleted && "text-gray-800 line-through"}
+        `}
+        >
+          {task}
+        </p>
       </div>
 
       <div>
-        <button onClick={() => handleDeleteTodo(id)}>
-          <CrossIcon width={20}/>
+        <button
+          onClick={() => handleDeleteTodo(id)}
+          className='h-7 w-7 flex justify-center items-center bg-red-500 hover:bg-red-600 ml-5 rounded'>
+          <CrossIcon width={20} />
         </button>
       </div>
     </div>

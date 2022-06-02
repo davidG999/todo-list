@@ -80,7 +80,7 @@ const Todos = () => {
   }
 
   return (
-    <section>
+    <section className="w-10/12 lg:w-1/2 max-w-2xl mb-20 flex flex-col items-center">
       <AddTodo
         task={task}
         handleChange={handleChange}
@@ -94,15 +94,15 @@ const Todos = () => {
           handleCheckTodo={handleCheckTodo}
         />
       ))}
-      
+
       {!hasTodos && (
-        <p>Please add a todo!</p>
+        <p className="text-xl"> Please add a todo! </p>
       )}
-      
+
       {hasTodos && (
-        <p>{`${remainingTodos} of ${todosLength} todos remaining`}</p>
+        <p className="mt-4" >{`[${remainingTodos} of ${todosLength}] todos remaining`}</p>
       )}
-      
+
     </section>
   )
 }

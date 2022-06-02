@@ -13,16 +13,17 @@ const AddTodo = ({
   handleChange
 }: AddTodoProps) => {
   return (
-    <form onSubmit={(handleSubmitTodo)}>
+    <form className="flex justify-between w-full mb-10" onSubmit={(handleSubmitTodo)}>
       <input
         type="text"
         name="task"
         value={task}
+        className="flex-1 rounded p-2 text-gray-800 mr-3"
         onChange={(handleChange)}
       />
 
-      <button type='submit'>
-        <PlusIcon width={30} />
+      <button className='opacity-80 hover:opacity-100' type='submit'>
+        <PlusIcon />
       </button>
     </form>
   );
