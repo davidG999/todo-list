@@ -1,3 +1,5 @@
+import { ReactComponent as CrossIcon } from '../assets/cross.svg'
+
 type Todo = {
   id: string,
   task: string,
@@ -17,15 +19,20 @@ const Row = ({
 }: TodoProps) => {
 
   return (
-    <div className="">
-      <p>{task}</p>
+    <div>
       <div>
-        <button onClick={() => handleDeleteTodo(id)}>X</button>
         <input
           type="checkbox"
           checked={isCompleted}
           onChange={() => handleCheckTodo(id)}
         />
+        <p>{task}</p>
+      </div>
+
+      <div>
+        <button onClick={() => handleDeleteTodo(id)}>
+          <CrossIcon width={20}/>
+        </button>
       </div>
     </div>
   )
