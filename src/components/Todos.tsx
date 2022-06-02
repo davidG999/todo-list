@@ -33,7 +33,9 @@ const Todos = () => {
   ]
   const [todos, setTodos] = useState<Todo[]>(staticData);
   const [task, setTask] = useState('');
-
+  const todosLength = todos.length
+  const hasTodos = todos.length > 0
+  const remainingTodos = todos.filter(todo => !todo.isCompleted).length
 
   const handleAddTodo = (todo: Todo) => {
     const updatedTodos = [...todos, todo]
@@ -57,7 +59,6 @@ const Todos = () => {
 
     task && handleAddTodo(todo)
   }
-
 
   const handleDeleteTodo = (id: string) => {
     const updatedTodos = todos.filter((todo) => todo.id !== id)
@@ -93,6 +94,15 @@ const Todos = () => {
           handleCheckTodo={handleCheckTodo}
         />
       ))}
+      
+      {!hasTodos && (
+        <p>Please add a todo!</p>
+      )}
+      
+      {hasTodos && (
+        <p>{`${remainingTodos} of ${todosLength} todos remaining`}</p>
+      )}
+      
     </section>
   )
 }
