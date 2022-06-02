@@ -1,6 +1,9 @@
+import Todos from './components/Todos';
+
 function App() {
   return (
-    <div className="bg-neutral-600">
+    <div className='text-slate-200'>
+      <Todos />
     </div>
   );
 }
