@@ -11,27 +11,7 @@ const Todos = () => {
     isCompleted: boolean
   }
 
-  const staticData = [
-    {
-      id: "0",
-      title: "Task 1",
-      task: "Do laundry 1",
-      isCompleted: false,
-    },
-    {
-      id: "1",
-      title: "Task 2",
-      task: "Do laundry 2",
-      isCompleted: false,
-    },
-    {
-      id: "2",
-      title: "Task 2",
-      task: "Do laundry 3",
-      isCompleted: false,
-    },
-  ]
-  const [todos, setTodos] = useState<Todo[]>(staticData);
+  const [todos, setTodos] = useState<Todo[]>([]);
   const [task, setTask] = useState('');
   const todosLength = todos.length
   const hasTodos = todos.length > 0
